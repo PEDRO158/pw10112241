@@ -1,0 +1,38 @@
+body{
+    /* border: 1px solid red; */
+    font-size: 16px;
+    margin: 0px auto;
+    max-width: 1024px; 
+}
+header{
+    background: #D1E3EE;
+}
+header nav{
+    background: #026DC6;
+    border-radius: 5px;
+    padding:1px 0px ;
+    margin: 0px auto;
+    width: 99%;
+}
+header nav form{
+    float: right;
+    margin-top: -35px;
+    margin-right: 10px;
+}
+header nav form input{
+    border-radius: 5px;
+}
+header nav form input[type="submit"]{
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+}
+header nav ul li{
+    color: white;
+    display: inline-block;
+    margin-right: 20px;
+}
+#logo{ 
+    margin: -150px 0px 0px 0px;
+
+}
