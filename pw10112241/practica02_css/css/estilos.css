@@ -23,11 +23,15 @@ header nav ul li{
 }
 
 header nav{
-    /*border: 1px solid red;*/
+    /*border: 1px solid red;*/  /*para ver el contorno de la caja*/
     /*aqui se mueve toda la caja*/
     margin-left: 220px;
 }
-
+#bgoffer{
+    position: relative;
+    top: -410px;
+    left: -35px;
+}
 #granthams{
     margin-top: 25px;
     margin-left: 25px;
@@ -36,4 +40,43 @@ header nav{
 #paint{
     float: right;
 }
-
+#primeraseccion {
+    height: 318px;
+    margin-top: 60px;
+}
+#primeraseccion article{
+    display: inline-block;  /*los dos artivle se pondran horizontal mientras quepan*/
+    vertical-align: top;
+}
+#secc01art01{
+    width: 60%;
+}
+#secc01art02{
+    width: 30%;
+    margin-left: 50px;
+}
+#secc01art02 ul{
+    list-style: none;
+}
+#secc01art02 ul li:before{
+    color: rgb(236, 6, 167);
+    content: "+";
+}
+.colorazul{
+    color: blue;
+}
+.colorrosa{
+    color: rgb(236, 6, 167);
+}
+.colorverde{
+    color: green;
+}
+.letragrande{
+    font-size: 3.5em;
+}
+.letramediana{
+    font-size: 1.5em;
+}
+.nito{
+    font-weight: bold;
+}
