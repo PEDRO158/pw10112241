@@ -1,8 +1,12 @@
 html{
     --color-verde: #849C3C;     /**/
+    --fondo-negro: #2C2C2C;
     --color-negro: #353535;
     --color-rojo: #D33040;
-    --color-gris: #lightgray;
+    --color-gris: lightgray;
+    --color-azul: lightblue;
+    --color-blanco: white;
+    --color-linea: #949494;
 }
 body{
     font-size: 16px; /*1em*/
@@ -12,6 +16,9 @@ body{
 }
 header ul li{
     display: inline-block;
+    margin-left: -4px;
+    padding: 8px 14px;
+    text-align: center;
     width: 17.0%;
 }
 header ul li:nth-child(2){
@@ -25,4 +32,49 @@ header ul li:nth-child(4){
 }
 header ul li:nth-child(5){
     background: var(--color-gris);
+}
+section article{
+    display: inline-block;
+    height: 280px;
+    pad: 08px 8px;
+    vertical-align: top;
+    width: 17.9%;
+}
+section article ul{
+    list-style: none;
+}
+section article:nth-child(2){
+    background: var(--color-verde);
+}
+section article:nth-child(3){
+    background: var(--color-negro);
+}
+section article:nth-child(4){
+    background: var(--color-rojo);
+}
+section article:nth-child(5){
+    background: var(--color-gris);
+}
+section, footer{
+    background: var(--fondo-negro);
+}
+section img{
+    width: 150px;
+}
+
+/*CLASES*/
+.letra-azul{
+    color: var(--color-azul);
+}
+.letra-blanca{
+    color: var(--color-blanco);
+}
+.letra-gris{
+    color: var(--color-linea);
+}
+.tam-menu-lateral{
+    font-size: 1.1em;
+}
+.tam-tarjetas{
+    font-size: 1.7em;
 }
