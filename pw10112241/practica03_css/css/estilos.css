@@ -10,16 +10,27 @@ html{
 }
 body{
     font-size: 16px; /*1em*/
-    max-width: 1024px;
+    max-width: 1078px;
     margin: 0px auto;
     /*min-width: 1078px;*/
 }
+footer article{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;  /*margen dentro de la caja*/
+    vertical-align: top;
+    width: 31.1%;
+}
+footer img{
+    width: 300px;
+    padding-left: 40px;
+}
 header ul li{
     display: inline-block;
-    margin-left: -4px;
+    margin-left: -30px;
     padding: 8px 14px;
     text-align: center;
-    width: 17.0%;
+    width: 19%;
 }
 header ul li:nth-child(2){
     background: var(--color-verde);
@@ -33,12 +44,16 @@ header ul li:nth-child(4){
 header ul li:nth-child(5){
     background: var(--color-gris);
 }
+hr{
+    border-style: dashed;
+    color: var(--color-linea);
+}
 section article{
     display: inline-block;
     height: 280px;
-    pad: 08px 8px;
+    pad: 18px 8px;
     vertical-align: top;
-    width: 17.9%;
+    width: 19%;
 }
 section article ul{
     list-style: none;
@@ -71,6 +86,9 @@ section img{
 }
 .letra-gris{
     color: var(--color-linea);
+}
+.read-more{
+    margin-left: 220px;
 }
 .tam-menu-lateral{
     font-size: 1.1em;
