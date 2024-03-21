@@ -1,0 +1,34 @@
+html{
+    --color-azul: #235d92;
+}
+body{
+    display: inline-block;
+    font-size: 16px; /*1em*/
+    max-width: 1078px;
+    margin: 0px auto;
+    /*min-width: 1078px;*/
+}
+header{
+    align-content: center;
+    background: var(--color-azul);
+    border: 1px solid red;
+}
+body header img{
+    width: 200px;
+}
+body section{
+    display: inline-block;
+}
+body main section{
+    display: inline-block;
+}
+main section article ul{
+    list-style: none;
+    text-align: left;
+}
+#sec01{
+    width: 20%;
+}
+#sec02{
+    width: 70%;
+}
