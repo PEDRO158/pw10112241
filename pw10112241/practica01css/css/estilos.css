@@ -5,27 +5,33 @@ body{
     max-width: 1024px; 
 }
 header{
+    
     background: #D1E3EE;
 }
 header nav{
     background: #026DC6;
     border-radius: 5px;
-    padding:1px 0px ;
-    margin: 0px auto;
-    width: 99%;
+    padding:1px 0px ;    /*espacio dentro,
+    1px afecta rriba y abajo, 0px afecta a izquierda y derecha*/
+    margin: 0px auto;   /*espacio fuera 
+    0px afecta arriba y abajo, auto afecta a izquierda y derecha*/
+    width: 99%; /*el ancho del contenedor,
+    hace que el contenido se centre de manera horizontal*/
 }
 header nav form{
     float: right;
-    margin-top: -35px;
+    margin-top: -35px;/*mover el elemento desde su posicion normal,
+    en negatido te sube*/
     margin-right: 10px;
 }
-header nav form input{
+header nav form input{ 
     border-radius: 5px;
 }
 header nav form input[type="submit"]{
+    /*especifico para el input tipo submit*/
     background-color: green;
     border: 1px solid green;
-    color: white;
+    color: white;/*cambia el color des texto*/
 }
 header nav ul li{
     color: white;
