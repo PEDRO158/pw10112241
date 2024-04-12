@@ -1,0 +1,85 @@
+html{
+    --color-rojo: #ff0043;
+}
+body{
+    /* border: 1px solid red; */
+    font-size: 16px; /* =1 em */
+    margin: 0px auto;
+    max-width: 1024px; 
+
+}
+
+header{
+    margin: 0px 0px 90px 0px;
+}
+header img {
+    margin: 10px 200px 0px 0px;
+}
+header article{
+    display: inline-block;
+}
+header nav{
+    display: inline-block;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+button{
+    border: 2px solid #ff0043;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 20px;
+}
+
+#seccion01{
+    margin: 0px 0px 100px 0px;
+}
+#seccion01 article{
+    display: inline-block;
+    width: 48%;
+}
+#articulo01 img{
+    width: 550px;
+    text-align: center;
+}
+#articulo02 img{
+    width: 300px;
+    margin: 0px 0px 0px 250px;
+}
+
+#seccion02{
+    margin: 0px 0px 100px 20px;
+}
+
+footer article{
+    width: 24%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 0px 50px 0px;
+}
+
+#button01{
+    color: #ff0043;
+}
+#button02{
+    color: white;
+    background-color: #ff0043;
+}
+#botones{
+    margin-left: 100px;
+}
+
+.letra-extra-grande{
+    font-size: 2.8em;
+    font-weight: bold;  /* negritas */
+}
+.letra-grande{
+    font-size: 2.1em;
+    font-weight: bold;  /* negritas */
+}
+.letra-mediana{
+    font-size: 1.5em;
+    font-weight: bold;  /* negritas */
+}
