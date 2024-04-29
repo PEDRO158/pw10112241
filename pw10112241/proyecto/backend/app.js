@@ -36,7 +36,17 @@ app.get('/api/clientes',(req,res)=>{
             res.send(filas);
         }
     })
-})
+});
+//seleccionamos un cliente en especifico
+app.get('/api/clientes/:id',(req,res)=>{
+    conexion.query('SELECT * FROM clientes WHERE id=?',[req.params.id],(error,fila)=>{
+        if (error) {
+            throw error;
+        } else {
+            res.send(fila);
+        }
+    })
+});
 
 //encender servidor
 let puerto=3000;    //estableer un puerto
