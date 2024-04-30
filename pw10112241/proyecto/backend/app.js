@@ -48,6 +48,39 @@ app.get('/api/clientes/:id',(req,res)=>{
     })
 });
 
+//elimnar
+app.delete('/api/clientes/:id',(req,res)=>{
+    let id= req.params.id;
+    conexion.query('DELETE FROM clientes WHERE id=?',[id],(error,filas)=>{
+        if (error) {
+            throw error;
+        } else {
+            res.send(filas);
+        }
+    })
+});
+//INSERTAR
+app.post('/api/clientes/:id',(req,res)=>{
+    let data={
+        id:req.body.id,
+        nombre:req.body.nombre,
+        apellido:req.body.id,
+        direccion:req.body.id,
+        telefono:req.body.id,
+        rfc:req.body.rfc,
+        curp:req.body.curp,
+        cp:req.body.cp,
+    }
+    let sql="INSERT INTO clientes SET ?";
+    conexion.query(sql,data,(error,resultado)=>{
+        if (error) {
+            throw error;
+        } else {
+            res.send(resultado);
+        }
+    })
+});
+
 //encender servidor
 let puerto=3000;    //estableer un puerto
 app.listen(puerto,function(){
