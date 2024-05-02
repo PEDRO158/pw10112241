@@ -60,13 +60,13 @@ app.delete('/api/clientes/:id',(req,res)=>{
     })
 });
 //INSERTAR
-app.post('/api/clientes/:id',(req,res)=>{
+app.post('/api/clientes',(req,res)=>{
     let data={
         id:req.body.id,
         nombre:req.body.nombre,
-        apellido:req.body.id,
-        direccion:req.body.id,
-        telefono:req.body.id,
+        apellido:req.body.apellido,
+        direccion:req.body.direccion,
+        telefono:req.body.telefono,
         rfc:req.body.rfc,
         curp:req.body.curp,
         cp:req.body.cp,
@@ -79,6 +79,26 @@ app.post('/api/clientes/:id',(req,res)=>{
             res.send(resultado);
         }
     })
+});
+
+//actualizar
+app.put('/api/cliente/:id',(req,res)=>{
+    let id= req.params.id;
+    let nombre= req.body.nombre;
+    let apellido= req.body.apellido;
+    let direccion= req.body.direccion;
+    let telefono= req.body.telefono;
+    let rfc= req.body.rfc;
+    let curp= req.body.curp;
+    let cp= req.body.cp;
+let sql="UPDATE clientes SET nombre=?,apellido,direccion=?,telefono=?,rfc=?,curp=?,cp=? WHERE id=?";
+conexion.query(sql,[nombre,apellido,direccion,telefono,rfc,curp,cp,id],(error,results)=>{
+    if (error) {
+        throw error;
+    } else {
+        res.send(results);
+    }
+})
 });
 
 //encender servidor
