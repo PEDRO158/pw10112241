@@ -21,7 +21,7 @@ const router = createRouter({
       component: ClientesView
     },
     {
-      path: '/pentas',//porque pentas
+      path: '/ventas',//porque pentas
       name: 'ventas',
       component: ClientesView
     },
