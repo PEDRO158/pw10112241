@@ -2,7 +2,7 @@
     <div class="container mt-5"></div>
         <div class="card">
             <div class="card-header">
-                <h4>Agregar Clientes</h4>
+                <h4>Editar Cliente</h4>
                 <div v-if="mensaje==1" class="alert alert-success" role="alert">
                     Datos guardados con exito.
                 </div>
@@ -72,7 +72,7 @@ export default{
             /^([a-z]{3,4})(\d{2})(\d{2})(\d{2})([0-9a-z]{3})$/i
         );
         const curpRegex=new RegExp(
-            /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/g
+            /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9][12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/g
         );
         const cpRegex=new RegExp(
             /^[0-9]{5}$/
@@ -105,13 +105,25 @@ export default{
                 }
             },
         }
-    }, methods:{
+    }, 
+    
+    mounted(){
+        this.getCliente(this.$route.params.id);
+    },
+
+    methods:{
+        getCliente(){
+            axios.get('http://localhost:3000/api/clientes'+ clienteID).then(Rres=>{
+                this.model.cliente.id= res.data[0].id;//todo
+                //this.model.cliente.id= res.data[0].id; //para un solo dato
+            })
+        },
         onTodoBien(){
             //alert('Todo bien')
             this.guardarCliente();
         },
         guardarCliente(){
-            axios.post('http://localhost:3000/api/clientes',this.model.cliente)
+            axios.put('http://localhost:3000/api/clientes'+ this.$route.params.id,this.model.cliente)
             .then(res=>{
                 if (res.data.affectedRows== 1) {//si se inserta un registro
                     this.model.cliente={
