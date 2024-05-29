@@ -41,7 +41,7 @@
                 if (user) {
                     this.valido=true
                 }else{
-                    this.valido=true
+                    this.valido=false
                 }
             })
         }, methods:{

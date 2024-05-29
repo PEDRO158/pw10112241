@@ -5,6 +5,9 @@ import ClientesCreateView from '../views/ClientesCreateView.vue'
 import ClientesEditarView from '../views/ClientesEditarView.vue'
 import RegistroView from '../views/RegistroView.vue'
 import EntradaView from '../views/EntradaView.vue'
+import NoAutorizaView from '../views/NoAutorizaView.vue'
+
+import { getAuth } from 'firebase/auth';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +20,10 @@ const router = createRouter({
     {
       path: '/clientes',
       name: 'clientes',
-      component: ClientesView
+      component: ClientesView,
+      meta:{
+        requireAuth: true,
+      }
     },
     {
       path: '/clientes/create',
@@ -40,6 +46,11 @@ const router = createRouter({
       component: EntradaView
     },
     {
+      path: '/clientes/NoAutorizaView',
+      name: 'NoAutorizaView',
+      component: NoAutorizaView
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -48,6 +59,21 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  //si hay alguna ruta tiene .meta
+  if (to.matched.some((record) => record.meta.requireAuth)) {
+    //si hay un usuario registrado
+    if (getAuth.currentUser) {
+      next();//continuar
+    }else{
+      //alert("Acceso no autorizado")
+      next("/clientes/NoAutorizaView");
+    }
+  } else{
+      next();
+  }
 })
 
 export default router
